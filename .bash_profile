@@ -13,7 +13,7 @@ eval "$(rbenv init -)"
 source /usr/local/etc/bash_completion.d/git-completion.bash
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
 source ~/.dotfiles/.bashrc
-source ~/.dotfiles/.alias
+# source ~/.dotfiles/.alias
 # sqlite
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 # homebrew
@@ -22,6 +22,17 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 # mysql
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/bin/python:$PATH"
+# python
+export PATH=/Library/Frameworks/Python.framework/Versions/3.7.7/bin:$PATH
 # nodebrew
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
+export PYENV_ROOT=${HOME}/.pyenv
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+alias brew="env PATH=${PATH/\/Users\/user_name\/\.pyenv\/shims:/} brew"
+alias brew="env PATH=${PATH/\/Users\/user_name\/\.pyenv\/shims:/} brew"
